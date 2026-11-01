@@ -1,0 +1,15 @@
+{
+  "name": "autopsy-ai-triage",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Read-only Autopsy case context exporter for evidence-grounded AI workflows",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "demo": "node src/cli.js demo",
+    "collect": "node src/cli.js collect",
+    "test": "node --test",
+    "check": "node --check src/cli.js && node --check src/client.js && node --check src/context.js"
+  }
+}

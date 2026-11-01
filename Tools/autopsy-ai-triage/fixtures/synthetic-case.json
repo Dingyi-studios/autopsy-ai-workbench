@@ -1,0 +1,32 @@
+{
+  "synthetic": true,
+  "caseLabel": "DEMO-001 · 完全合成案件",
+  "responses": {
+    "get_case_summary": { "caseName": "DEMO-001 · 完全合成案件", "dataSources": 1, "totalFiles": 3, "totalArtifacts": 3 },
+    "query_data_sources": [
+      { "objectId": 1, "name": "synthetic-evidence", "type": "LocalFilesDataSource", "timezone": "Asia/Shanghai" }
+    ],
+    "query_files": [
+      { "objectId": 101, "name": "合同草案.txt", "path": "/demo/documents/", "size": 120, "mimeType": "text/plain" },
+      { "objectId": 102, "name": "演示邮件.eml", "path": "/demo/mail/", "size": 280, "mimeType": "message/rfc822" },
+      { "objectId": 103, "name": "sample-capture.pcap", "path": "/demo/network/", "size": 512, "mimeType": "application/vnd.tcpdump.pcap" }
+    ],
+    "query_data_artifacts": [
+      { "objectId": 201, "sourceFileId": 102, "dataSourceId": 1, "artifactType": "TSK_EMAIL_MSG", "attributes": [
+        { "type": "TSK_EMAIL_FROM", "value": "alice@example.invalid" },
+        { "type": "TSK_EMAIL_TO", "value": "bob@example.invalid" },
+        { "type": "TSK_SUBJECT", "value": "演示：请核对合同版本" }
+      ] },
+      { "objectId": 202, "sourceFileId": 101, "dataSourceId": 1, "artifactType": "TSK_WEB_HISTORY", "attributes": [
+        { "type": "TSK_URL", "value": "https://example.invalid/demo-contract" },
+        { "type": "TSK_DATETIME", "value": 1704067200 }
+      ] }
+    ],
+    "query_analysis_results": [
+      { "objectId": 301, "sourceFileId": 101, "dataSourceId": 1, "artifactType": "TSK_KEYWORD_HIT", "attributes": [
+        { "type": "TSK_KEYWORD", "value": "合同" },
+        { "type": "TSK_TEXT", "value": "合成命中片段，仅供界面和引用流程演示，不构成案件事实。" }
+      ] }
+    ]
+  }
+}
